@@ -9,4 +9,4 @@ d.src = "https://isitmaintained.com/badge/open/" + url + ".svg"
 
 let c = a.parentElement.parentElement.nextElementSibling
 a.parentElement.parentElement.parentElement.insertBefore(b,c)
- a.parentElement.parentElement.parentElement.insertBefore(d,c)
+a.parentElement.parentElement.parentElement.insertBefore(d,c)
