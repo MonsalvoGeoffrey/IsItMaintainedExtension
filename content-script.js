@@ -5,7 +5,7 @@ let url = location.href.replace("https://github.com/","")
 b.src = "https://isitmaintained.com/badge/resolution/" + url + ".svg"
 
 let d = document.createElement("img")
-d.src = "http://isitmaintained.com/badge/open/" + url + ".svg"
+d.src = "https://isitmaintained.com/badge/open/" + url + ".svg"
 
 let c = a.parentElement.parentElement.nextElementSibling
 a.parentElement.parentElement.parentElement.insertBefore(b,c)
