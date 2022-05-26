@@ -1,0 +1,27 @@
+{
+    "name": "Is It Maintained",
+    "description": "",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "webNavigation"
+    ],
+    "host_permissions": [
+        "*://*.github.com/*"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+    {
+        "matches": ["*://*.github.com/*"],
+        "js": ["content-script.js"]
+    }
+    ],
+    "options_page": "options.html"
+  }
