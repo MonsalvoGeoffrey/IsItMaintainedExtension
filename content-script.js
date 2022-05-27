@@ -1,16 +1,18 @@
 
 function main(){
-    let a = document.querySelectorAll("[title='Switch branches or tags']")[0]
-    let b = document.createElement("img")
+    let branchElement = document.querySelector("[title='Switch branches or tags']")
+    if(branchElement == null) return;
+    let issueResolutionImage = document.createElement("img")
     let url = location.href.replace("https://github.com/","")
-    b.src = "https://isitmaintained.com/badge/resolution/" + url + ".svg"
+    issueResolutionImage.src = "https://isitmaintained.com/badge/resolution/" + url + ".svg"
 
-    let d = document.createElement("img")
-    d.src = "https://isitmaintained.com/badge/open/" + url + ".svg"
+    let openIssueImage = document.createElement("img")
+    openIssueImage.src = "https://isitmaintained.com/badge/open/" + url + ".svg"
 
-    let c = a.parentElement.parentElement.nextElementSibling
-    a.parentElement.parentElement.parentElement.insertBefore(b,c)
-    a.parentElement.parentElement.parentElement.insertBefore(d,c)
+    let insertPosition = branchElement.parentElement.parentElement
+    let beforeThis = insertPosition.nextElementSibling
+    insertPosition.parentElement.insertBefore(issueResolutionImage,beforeThis)
+    insertPosition.parentElement.insertBefore(openIssueImage,beforeThis)
 }
 
 main()

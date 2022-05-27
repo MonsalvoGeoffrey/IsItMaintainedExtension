@@ -6,7 +6,7 @@ This is a chrome extension that grabs the results provided by [Is It Maintained]
 It isn't currently ready for production, but is technically functional.
 
 What still has to be worked on:
-- [ ] Detecting if the current page is indeed a GitHub repository
+- [x] Detecting if the current page is indeed a GitHub repository
 - [ ] Properly styling the results
 
 After that, the extension will be ready to be pushed to the Chrome Web Store.
