@@ -12,7 +12,8 @@
         "webNavigation"
     ],
     "host_permissions": [
-        "*://*.github.com/*"
+        "*://*.github.com/*",
+        "*://isitmaintained.com/*"
     ],
     "action": {
         "default_popup": "popup.html"
