@@ -15,9 +15,6 @@
         "*://*.github.com/*",
         "*://isitmaintained.com/*"
     ],
-    "action": {
-        "default_popup": "popup.html"
-    },
     "content_scripts": [
     {
         "matches": ["*://*.github.com/*"],
