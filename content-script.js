@@ -1,5 +1,32 @@
 
+function onRemove(element, onDetachCallback) {
+    const observer = new MutationObserver(function () {
+        function isDetached(el) {
+            if (el.parentNode === document) {
+                return false;
+            } else if (el.parentNode === null) {
+                return true;
+            } else {
+                return isDetached(el.parentNode);
+            }
+        }
+
+        if (isDetached(element)) {
+            observer.disconnect();
+            onDetachCallback();
+        }
+    })
+
+    observer.observe(document, {
+         childList: true,
+         subtree: true
+    });
+}
+
+
+
 function main(){
+    console.log("content-script.js loaded");
     let branchElement = document.querySelector("[title='Switch branches or tags']")
     if(branchElement == null) return;
 
@@ -29,6 +56,8 @@ function main(){
     let beforeThis = insertPosition.nextElementSibling
     insertPosition.parentElement.insertBefore(issueResolutionImage,beforeThis)
     insertPosition.parentElement.insertBefore(openIssueImage,beforeThis)
+
+    onRemove(issueResolutionImage, main)
 }
 
 main()
