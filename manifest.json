@@ -20,6 +20,5 @@
         "matches": ["*://*.github.com/*"],
         "js": ["content-script.js"]
     }
-    ],
-    "options_page": "options.html"
+    ]
   }
