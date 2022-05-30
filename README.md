@@ -7,6 +7,6 @@ It isn't currently ready for production, but is technically functional.
 
 What still has to be worked on:
 - [x] Detecting if the current page is indeed a GitHub repository
-- [ ] Properly styling the results
+- [x] Properly styling the results
 
 After that, the extension will be ready to be pushed to the Chrome Web Store.
