@@ -43,6 +43,13 @@ function main(){
     container.appendChild(issueResolutionImage)
     container.appendChild(openIssueImage)
 
+
+    container.style.margin = "0 5px 0 5px"
+    container.style.alignItems = "center"
+    container.style.display = "flex"
+    container.style.height = "32px" // 100% doesn't seem to work ?
+    issueResolutionImage.style.marginRight = "5px"
+
     // Grab the SVGs from isitmaintained.com
     chrome.runtime.sendMessage(
         "https://isitmaintained.com/badge/resolution/" + urlParsed + ".svg?no-cache",
