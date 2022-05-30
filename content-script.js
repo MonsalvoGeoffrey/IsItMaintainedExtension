@@ -38,8 +38,8 @@ function main(){
 
     // Create each elements
     let container = document.createElement("div")
-    let issueResolutionImage = document.createElement("div")
-    let openIssueImage = document.createElement("div")
+    let issueResolutionImage = document.createElement("img")
+    let openIssueImage = document.createElement("img")
     container.appendChild(issueResolutionImage)
     container.appendChild(openIssueImage)
 
@@ -50,20 +50,8 @@ function main(){
     container.style.height = "32px" // 100% doesn't seem to work ?
     issueResolutionImage.style.marginRight = "5px"
 
-    // Grab the SVGs from isitmaintained.com
-    chrome.runtime.sendMessage(
-        "https://isitmaintained.com/badge/resolution/" + urlParsed + ".svg?no-cache",
-        data => {
-            issueResolutionImage.innerHTML = data
-        }
-    );
-
-    chrome.runtime.sendMessage(
-        "https://isitmaintained.com/badge/open/" + urlParsed + ".svg?no-cache",
-        data => {
-            openIssueImage.innerHTML = data
-        }
-    );
+    issueResolutionImage.src = "https://isitmaintained.com/badge/resolution/" + urlParsed + ".svg?no-cache"
+    openIssueImage.src = "https://isitmaintained.com/badge/open/" + urlParsed + ".svg?no-cache"
     
     // Add the elements to the DOM
     let insertPosition = branchElement.parentElement.parentElement
