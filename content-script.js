@@ -26,11 +26,15 @@ function onRemove(element, onDetachCallback) {
 
 
 function main(){
-    console.log("content-script.js loaded");
     let branchElement = document.querySelector("[title='Switch branches or tags']")
     if(branchElement == null) return;
 
     let re = /^https:\/\/github\.com\/[^\/]*\/[^\/]*/i
+
+
+    let iimDiv = document.createElement("div")
+
+
 
     let issueResolutionImage = document.createElement("div")
     let url = location.href
@@ -52,12 +56,14 @@ function main(){
         }
     );
 
+    iimDiv.appendChild(issueResolutionImage)
+    iimDiv.appendChild(openIssueImage)
+
     let insertPosition = branchElement.parentElement.parentElement
     let beforeThis = insertPosition.nextElementSibling
-    insertPosition.parentElement.insertBefore(issueResolutionImage,beforeThis)
-    insertPosition.parentElement.insertBefore(openIssueImage,beforeThis)
+    insertPosition.parentElement.insertBefore(iimDiv,beforeThis)
 
-    onRemove(issueResolutionImage, main)
+    onRemove(iimDiv, main)
 }
 
 main()
