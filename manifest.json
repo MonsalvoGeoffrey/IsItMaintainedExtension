@@ -1,6 +1,6 @@
 {
-    "name": "Is It Maintained",
-    "description": "",
+    "name": "Is It Maintained?",
+    "description": "See at a glance whehter a github repository is still resolving issues or not.",
     "version": "1.0",
     "manifest_version": 3,
     "permissions": [
