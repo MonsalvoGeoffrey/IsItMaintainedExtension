@@ -5,8 +5,7 @@
     "manifest_version": 3,
     "permissions": [
         "activeTab",
-        "scripting",
-        "webNavigation"
+        "scripting"
     ],
     "host_permissions": [
         "*://*.github.com/*",
@@ -17,5 +16,8 @@
         "matches": ["*://*.github.com/*"],
         "js": ["content-script.js"]
     }
-    ]
+    ],
+    "icons": {
+        "128": "imgs/icon.png"
+    }
   }
