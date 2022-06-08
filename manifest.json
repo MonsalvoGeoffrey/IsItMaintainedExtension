@@ -3,9 +3,6 @@
     "description": "See at a glance whehter a github repository is still resolving issues or not.",
     "version": "1.0",
     "manifest_version": 3,
-    "permissions": [
-        "scripting"
-    ],
     "host_permissions": [
         "*://*.github.com/*",
         "*://isitmaintained.com/*"
